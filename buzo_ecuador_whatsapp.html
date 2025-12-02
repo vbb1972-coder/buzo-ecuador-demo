@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buzo Ecuador – Diving in Guayaquil & Ayangue</title>
+  <style>
+    :root {
+      --primary: #d00000;          /* red accent to match existing brand bar */
+      --primary-dark: #8b0000;
+      --accent: #00b4d8;
+      --bg: #f4f7fb;
+      --text: #10212b;
+      --muted: #5c6f7a;
+      --white: #ffffff;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+    }
+
+    .top-bar {
+      background: var(--primary);
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 0.3rem 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: #ffe45b; /* yellow frame hinting at logo */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.8rem;
+      color: #003566;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    }
+
+    .brand-logo span {
+      line-height: 1.05;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-text span:first-child {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.78rem;
+      opacity: 0.8;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    nav li a {
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    nav li a:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .lang-pill {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      opacity: 0.9;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease,
+        background 0.15s ease, color 0.15s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 24px rgba(0, 0, 0, 0.2);
+      background: #ff1e1e;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: var(--white);
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.78)
+        ),
+        url("https://images.pexels.com/photos/240564/pexels-photo-240564.jpeg?auto=compress&cs=tinysrgb&w=1600");
+      background-size: cover;
+      background-position: center;
+      filter: brightness(1.03);
+      z-index: -1;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      padding: 4.3rem 1rem 3rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 3vw + 1.6rem, 3.1rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p.sub {
+      font-size: 1.02rem;
+      max-width: 31rem;
+      color: #e0f4ff;
+      margin-bottom: 1.35rem;
+    }
+
+    .hero small.sub-es {
+      display: block;
+      font-size: 0.9rem;
+      color: #d8ecff;
+      margin-top: -0.7rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: #d1e7ff;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+    }
+
+    .hero-badge span.icon {
+      font-size: 1rem;
+    }
+
+    .hero-side {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1.5rem;
+      border-radius: 1.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-side h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-side h2 + small {
+      display: block;
+      font-size: 0.82rem;
+      color: #d1e7ff;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-side p {
+      font-size: 0.9rem;
+      color: #e2ebff;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-side ul {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-bottom: 0.85rem;
+      padding-left: 0.9rem;
+    }
+
+    .hero-side li {
+      margin-bottom: 0.25rem;
+      position: relative;
+    }
+
+    .hero-side li::before {
+      content: "•";
+      position: absolute;
+      left: -0.8rem;
+      color: var(--accent);
+    }
+
+    .hero-side small {
+      font-size: 0.78rem;
+      color: #c6d7ff;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 3.4rem 1rem;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    h2.section-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+      text-align: center;
+    }
+
+    h2.section-title span.es {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+      opacity: 0.9;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0.3rem auto 2.1rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .section-intro span.es {
+      display: block;
+      margin-top: 0.25rem;
+      opacity: 0.95;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    #about p {
+      margin-bottom: 0.8rem;
+      color: #324049;
+      font-size: 0.96rem;
+    }
+
+    #about p span.es {
+      display: block;
+      color: #4b5b65;
+      margin-top: 0.18rem;
+      font-size: 0.94rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e3ebf3;
+    }
+
+    .card h3 {
+      margin-bottom: 0.3rem;
+      font-size: 1.08rem;
+    }
+
+    .card h3 span.es {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+      opacity: 0.9;
+    }
+
+    .card p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .card p span.es {
+      display: block;
+      margin-top: 0.18rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(208, 0, 0, 0.08);
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .tag span.es {
+      margin-left: 0.4rem;
+      opacity: 0.8;
+    }
+
+    .price-line {
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+      color: #1f2933;
+    }
+
+    .price-line span.es {
+      display: block;
+      font-size: 0.88rem;
+      color: #43505a;
+    }
+
+    .list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .list-grid-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .list-grid-item span.icon {
+      font-size: 1.1rem;
+      margin-top: 0.15rem;
+    }
+
+    .list-grid-item strong span.es {
+      display: block;
+      font-weight: 500;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #d0e4ff;
+      background: #f4f9ff;
+    }
+
+    blockquote {
+      margin-top: 1rem;
+      padding-left: 0.9rem;
+      border-left: 3px solid var(--primary);
+      font-size: 0.92rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    blockquote span.es {
+      display: block;
+      margin-top: 0.25rem;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .location {
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1.3rem;
+      border: 1px solid #e5edf4;
+    }
+
+    .location h3 {
+      margin-bottom: 0.25rem;
+    }
+
+    .location h3 span.es {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+      opacity: 0.9;
+    }
+
+    .location p {
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .location p span.es {
+      display: block;
+      margin-top: 0.15rem;
+    }
+
+    .testimonials {
+      background: #ffe5e5;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial {
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1.25rem 1.3rem;
+      font-size: 0.95rem;
+      color: #495057;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    .testimonial span.es {
+      display: block;
+      margin-top: 0.25rem;
+      color: #5b6b78;
+    }
+
+    .testimonial footer {
+      margin-top: 0.6rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid #e3ebf3;
+      font-size: 0.95rem;
+    }
+
+    .faq-item h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-item h3 span.es {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+      opacity: 0.9;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+    }
+
+    .faq-item p span.es {
+      display: block;
+      margin-top: 0.15rem;
+    }
+
+    .contact {
+      background: #000814;
+      color: var(--white);
+    }
+
+    .contact-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact p {
+      color: #d1e7ff;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .contact p span.es {
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-list span.es {
+      display: block;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      margin-bottom: 0.15rem;
+      display: block;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 0.55rem 0.7rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      font-size: 0.9rem;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #000000;
+      color: #9caec6;
+      padding: 1.1rem 1rem;
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      opacity: 0.85;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .footer-inner span.es {
+      display: block;
+      margin-top: 0.15rem;
+    }
+
+    @media (max-width: 800px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-side {
+        margin-top: 0.5rem;
+      }
+
+      .contact-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      .nav-right {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar">BOOK YOUR PLACE • RESERVA TU CUPO</div>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-logo">
+          <span>BUZO<br />ECUADOR</span>
+        </div>
+        <div class="logo-text">
+          <span>BUZO ECUADOR</span>
+          <span>Diving • Guayaquil &amp; Ayangue</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">Who We Are</a></li>
+          <li><a href="#experiences">Diving Courses</a></li>
+          <li><a href="#snsi">Certifications</a></li>
+          <li><a href="#locations">Services &amp; Trips</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <span class="lang-pill">EN / ES</span>
+        <a href="#contact" class="btn-outline">Book / Reservar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1>Dive Ecuador’s Pacific Coast with Buzo Ecuador</h1>
+          <p class="sub">
+            Diving agency based in <strong>Guayaquil</strong> and
+            <strong>Ayangue</strong>, specialized in courses for beginners and
+            tours for certified divers, with SNSI international certification.
+          </p>
+          <small class="sub-es">
+            Agencia de buceo en <strong>Guayaquil</strong> y
+            <strong>Ayangue</strong>, especializada en cursos para
+            principiantes y tours para buzos certificados, con certificación
+            internacional SNSI.
+          </small>
+          <div class="hero-cta">
+            <a href="#contact" class="btn-primary">Book Your Place</a>
+            <a href="#experiences" class="btn-outline">See Courses &amp; Prices</a>
+          </div>
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <span class="icon">✅</span>
+              <span>SNSI International Certifications</span>
+            </div>
+            <div class="hero-badge">
+              <span class="icon">👥</span>
+              <span>Small Groups &amp; Expert Instructors</span>
+            </div>
+            <div class="hero-badge">
+              <span class="icon">📍</span>
+              <span>Guayaquil &amp; Ayangue, Ecuador</span>
+            </div>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <h2>First time diving?</h2>
+          <small>¿Primera vez buceando?</small>
+          <p>
+            We start in shallow water, explain everything step by step, and stay
+            right next to you during the entire dive.
+            <span class="es">
+              Empezamos en aguas poco profundas, explicamos todo paso a paso y
+              estamos a tu lado durante toda la inmersión.
+            </span>
+          </p>
+          <ul>
+            <li>Beginner‑friendly “try dive” programs</li>
+            <li>All equipment included</li>
+            <li>Patient, certified instructors</li>
+          </ul>
+          <small>
+            Tell us your level and how many days you have, and we’ll suggest the
+            best option for you.
+          </small>
+        </aside>
+      </div>
+    </section>
+
+    <!-- WHO WE ARE -->
+    <section id="about">
+      <div class="section-inner">
+        <h2 class="section-title">
+          Who Are We?
+          <span class="es">¿Quiénes somos?</span>
+        </h2>
+        <p class="section-intro">
+          We are an agency specialized in providing diving services in
+          Guayaquil and Ayangue, Ecuador.
+          <span class="es">
+            Somos una agencia especializada en servicios de buceo en Guayaquil
+            y Ayangue, Ecuador.
+          </span>
+        </p>
+        <div class="two-col">
+          <div>
+            <p>
+              We offer diving courses for beginners and divers who want to
+              acquire new specialties, and we organize national and
+              international diving tours.
+              <span class="es">
+                Ofrecemos cursos de buceo para principiantes y para buzos que
+                desean adquirir nuevas especialidades, y organizamos tours de
+                buceo nacionales e internacionales.
+              </span>
+            </p>
+            <p>
+              Our tours deliver SNSI international certification, which
+              accredits you as a diver and allows you to practice this sport
+              anywhere in the world.
+              <span class="es">
+                Nuestros cursos entregan certificación internacional SNSI, que
+                te acredita como buzo y te permite practicar este deporte en
+                cualquier parte del mundo.
+              </span>
+            </p>
+          </div>
+          <div class="card">
+            <h3>At Buzo Ecuador you’ll find:<span class="es">En Buzo Ecuador encontrarás:</span></h3>
+            <ul>
+              <li>Personalized attention</li>
+              <li>Small groups on each dive</li>
+              <li>Modern, well‑maintained equipment</li>
+              <li>Dives adapted to your experience</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVING COURSES -->
+    <section id="experiences">
+      <div class="section-inner">
+        <h2 class="section-title">
+          Diving Courses
+          <span class="es">Cursos de buceo</span>
+        </h2>
+        <p class="section-intro">
+          Meet our courses and prices and live an amazing experience with us.
+          <span class="es">
+            Conoce nuestros cursos y precios y vive una experiencia increíble
+            con nosotros.
+          </span>
+        </p>
+        <div class="card-grid">
+          <article class="card">
+            <span class="tag">Try Dive <span class="es">Bautismo</span></span>
+            <h3>Discover Scuba Diving</h3>
+            <p>
+              Introductory experience for people who have never dived before,
+              including theory, pool or confined water practice, and one sea
+              dive with an instructor.
+            </p>
+            <p class="price-line">
+              From / Desde: <strong>$95 USD</strong>
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Open Water</span>
+            <h3>Open Water Diver – SNSI</h3>
+            <p>
+              Complete course that certifies you as an independent diver to a
+              depth of 18 meters, with international recognition.
+            </p>
+            <p class="price-line">From / Desde: <strong>$399 USD</strong></p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Advanced</span>
+            <h3>Advanced Diver – SNSI</h3>
+            <p>
+              Improve your skills with deep dives, navigation, and optional
+              specialties such as night diving.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Rescue &amp; Specialties</span>
+            <h3>Rescue Diver &amp; Specialties</h3>
+            <p>
+              For those who want to go further and learn how to assist other
+              divers and handle different conditions underwater.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES OFFERED -->
+    <section id="services">
+      <div class="section-inner">
+        <h2 class="section-title">
+          Services Offered
+          <span class="es">Servicios ofrecidos</span>
+        </h2>
+        <div class="card">
+          <ul>
+            <li>Diving classes and national/international diving tours</li>
+            <li>Bay and whale‑watching tours</li>
+            <li>Sport fishing and aquatic “chivas” experiences</li>
+            <li>Rental and sale of diving equipment</li>
+            <li>
+              New and well‑maintained equipment to give you the confidence you
+              need underwater
+            </li>
+            <li>
+              Comfortable classroom and access to the best swimming pools for
+              practice
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOAT / TRAVEL -->
+    <section id="snsi">
+      <div class="section-inner">
+        <h2 class="section-title">
+          Comfortable and Safe Travel
+          <span class="es">Viajes cómodos y seguros</span>
+        </h2>
+        <p class="section-intro">
+          We use one of the best boats in the area, “Perla Negra”, designed to
+          make your trip safe, fast, and comfortable.
+        </p>
+        <div class="two-col">
+          <div>
+            <p>
+              9.5 meters in length and 2.5 meters in beam, with bathroom on
+              board, so you have the comfort you need.
+            </p>
+            <p>
+              Travel insurance and two modern 4‑stroke engines with 175 HP each
+              allow you to move quickly without excessive noise or pollution.
+            </p>
+          </div>
+          <div class="card">
+            <h3>What this means for you</h3>
+            <ul>
+              <li>Safe, stable boat for diving</li>
+              <li>Fast navigation to the best sites</li>
+              <li>Comfort before and after each dive</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section id="locations">
+      <div class="section-inner">
+        <h2 class="section-title">
+          Where We Dive
+          <span class="es">Dónde buceamos</span>
+        </h2>
+        <div class="location-grid">
+          <div class="location">
+            <h3>Guayaquil</h3>
+            <p>Administrative center, classrooms, and pool sessions.</p>
+          </div>
+          <div class="location">
+            <h3>Ayangue</h3>
+            <p>Calm bay known as “the pool of the Pacific”, ideal for training and tours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="contact-inner">
+        <div>
+          <h2 class="section-title" style="text-align:left;">
+            Book Your Place
+            <span class="es">Reserva tu cupo</span>
+          </h2>
+          <p>
+            Send us a message with the dates you are interested in and the type
+            of experience you want, and we will get back to you with availability
+            and prices.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <strong>WhatsApp:</strong> +593 99 000 0000
+            </li>
+            <li>
+              <strong>Phone:</strong> +593 04 000 0000
+            </li>
+            <li>
+              <strong>Email:</strong> info@buzoecuador.com
+            </li>
+            <li>
+              <strong>Instagram / Facebook:</strong> @buzoecuador
+            </li>
+          </ul>
+        </div>
+        <div>
+          <form>
+            <div>
+              <label for="name">Name / Nombre</label>
+              <input id="name" type="text" placeholder="Your name / Tu nombre" />
+            </div>
+            <div>
+              <label for="contactField">Email or WhatsApp / Correo o WhatsApp</label>
+              <input
+                id="contactField"
+                type="text"
+                placeholder="How can we contact you? / ¿Cómo te contactamos?"
+              />
+            </div>
+            <div>
+              <label for="level">Experience Level / Nivel de experiencia</label>
+              <select id="level">
+                <option>Beginner – never dived before / Principiante</option>
+                <option>Have tried once or twice / He probado pocas veces</option>
+                <option>Certified diver / Buzo certificado</option>
+              </select>
+            </div>
+            <div>
+              <label for="dates">Preferred Dates / Fechas preferidas</label>
+              <input
+                id="dates"
+                type="text"
+                placeholder="Example: 12–15 March / Ej: 12–15 marzo"
+              />
+            </div>
+            <div>
+              <label for="message">Message / Mensaje</label>
+              <textarea
+                id="message"
+                placeholder="Tell us what you’d like to do... / Cuéntanos qué te gustaría hacer..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              Send Inquiry / Enviar consulta
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        © 2025 Buzo Ecuador – SNSI International Diving Center.
+        <span class="es">Desarrollado como demo de nuevo sitio web.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#about">Who We Are</a>
+        <a href="#experiences">Diving Courses</a>
+        <a href="#services">Services Offered</a>
+        <a href="#contact">Book Your Place</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
